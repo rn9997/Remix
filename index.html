@@ -1,6 +1,36 @@
 <html>
 <head>
   <style>
+    <head>
+    <style>
+        /* Your button styling */
+        .cool-button {
+            font-size: 20px;
+            padding: 15px 30px;
+            color: white;
+            background: linear-gradient(90deg, red, yellow, green, cyan, blue, magenta, red);
+            background-size: 300%;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            animation: gradient 3s infinite;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            transition: transform 0.2s ease-in-out;
+        }
+
+        .cool-button:hover {
+            transform: scale(1.1);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+        }
+
+        @keyframes gradient {
+            0% { background-position: 0%; }
+            50% { background-position: 100%; }
+            100% { background-position: 0%; }
+        }
+    </style>
+</head>
+
   .bn5 {
   padding: 0.6em 2em;
   border: none;
