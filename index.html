@@ -1,115 +1,146 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-  <style>
-    .bn5 {
-  padding: 0.6em 2em;
-  border: none;
-  outline: none;
-  color: rgb(255, 255, 255);
-  background: #111;
-  cursor: pointer;
-  position: relative;
-  z-index: 0;
-  border-radius: 10px;
-}
-
-.bn5:before {
-  content: "";
-  background: linear-gradient(
-    45deg,
-    #ff0000,
-    #ff7300,
-    #fffb00,
-    #48ff00,
-    #00ffd5,
-    #002bff,
-    #7a00ff,
-    #ff00c8,
-    #ff0000
-  );
-  position: absolute;
-  top: -2px;
-  left: -2px;
-  background-size: 400%;
-  z-index: -1;
-  filter: blur(5px);
-  width: calc(100% + 4px);
-  height: calc(100% + 4px);
-  animation: glowingbn5 20s linear infinite;
-  opacity: 0;
-  transition: opacity 0.3s ease-in-out;
-  border-radius: 10px;
-}
-
-@keyframes glowingbn5 {
-  0% {
-    background-position: 0 0;
-  }
-  50% {
-    background-position: 400% 0;
-  }
-  100% {
-    background-position: 0 0;
-  }
-}
-
-.bn5:active {
-  color: #000;
-}
-
-.bn5:active:after {
-  background: transparent;
-}
-
-.bn5:hover:before {
-  opacity: 1;
-}
-
-.bn5:after {
-  z-index: -1;
-  content: "";
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  background: #191919;
-  left: 0;
-  top: 0;
-  border-radius: 10px;
-}
-    <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fortnite</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet"> <!-- Modern font -->
     <style>
+        /* Background: RGB Fortnite Color */
+        body {
+            background: rgb(45, 0, 255); /* Dark Blue */
+            background: linear-gradient(45deg, rgb(45, 0, 255), rgb(255, 0, 255), rgb(0, 255, 128)); /* RGB gradient with Fortnite colors */
+            color: #1a3d7c; /* Dark Blue Text for readability */
+            font-family: 'Poppins', sans-serif; /* Modern readable font */
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 3.5em;
+            font-weight: 600;
+            color: white;
+            margin-top: 20px;
+        }
+
+        h2 {
+            font-size: 2.5em;
+            margin-top: 20px;
+            color: #ffffff;
+        }
+
+        p, ul {
+            font-size: 1.2em;
+            line-height: 1.6;
+            margin: 20px 0;
+            color: #e6e6e6; /* Lighter grey text for paragraphs */
+        }
+
+        /* Button Styling with Fortnite RGB colors */
+        .cool-button {
+            font-size: 18px;
+            padding: 15px 30px;
+            color: white;
+            background: linear-gradient(45deg, #8a2be2, #32cd32); /* Fortnite Purple and Green */
+            background-size: 200% 200%;
+            border: none;
+            border-radius: 12px;
+            cursor: pointer;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            transition: all 0.3s ease;
+            animation: gradient 3s infinite;
+        }
+
+        .cool-button:hover {
+            transform: scale(1.1);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+        }
+
+        /* Gradient Animation for buttons */
+        @keyframes gradient {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        /* Back to Top Button Styling */
+        .back-to-top {
+            font-size: 18px;
+            padding: 15px 30px;
+            color: white;
+            background: linear-gradient(45deg, #8a2be2, #32cd32); /* Purple and Green */
+            background-size: 200% 200%;
+            border: none;
+            border-radius: 12px;
+            cursor: pointer;
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .back-to-top:hover {
+            transform: scale(1.1);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+        }
+
+        /* Footer Styling */
+        footer {
+            margin-top: 50px;
+            font-size: 1em;
+            color: #ffffff;
+        }
+
+        /* Mobile Responsiveness */
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 2.5em;
+            }
+            h2 {
+                font-size: 2em;
+            }
+            p, ul {
+                font-size: 1em;
+            }
+        }
+    </style>
 </head>
+<body>
 
+    <!-- Main Content -->
+    <h1>Fortnite</h1>
+    <p>This website is going to be based around Fortnite</p>
 
-  </style>
-</head>
+    <h2>What is Fortnite?</h2>
+    <p>Fortnite Battle Royale, a free-to-play gamemode, allows up to 100 players to interact, fighting to be the last person standing. Fortnite is a popular metaverse platform.</p>
 
-<body> <font color="blue">
-<h1>Fortnite</h1>
-<h2> This website is going to be based around Fortnite
-<p>
-What is Fortnite  <p>
-Fortnite Battle Royale, a free-to-play gamemode , allows up to 100 players to interact, fighting to be the last person standing. Fortnite is a popular metaverse platform.  <p>
-Is Fortnite fun? <p>
-Absolutely, Fortnite is an intense, creative game designed for 13+ as it includes fighting, shooting and more. Many Fortnite players love the game <p>
-<a href="https://www.imdb.com/title/tt8020008/reviews/" class="bn5">Reviews</a> <p>
-Unfortunately not, Fortnite is only available on PC/Consoles and not available on phones/ipads due to a legal issue <p> An alternative is to use GeForce Now (Limited Time Gameplay) or Xbox Cloud Gaming (Unlimited Time Gaming) Xbox Cloud Gaming has Unlimited Time Gaming but less performance but GeForce Now has High quality but 1 hour sessions as well as a waittime to play fortnite. <p>
-Benefits Of Fortnite <p>
-Enhances strategic thinking, problem-solving, and hand-eye coordination.
-<p> Promotes teamwork and global social interaction. <p>
-<p> Boosts creativity through custom map-building. <p>
-Provides entertainment and stress relief. <p>
-Builds a sense of community with events and challenges. <p>
+    <h2>Is Fortnite fun?</h2>
+    <p>Absolutely, Fortnite is an intense, creative game designed for 13+ as it includes fighting, shooting, and more. Many Fortnite players love the game.</p>
 
-  <button onclick="location.href='about.html'">Next Page</button>
+    <h2>Reviews</h2>
+    <p>Unfortunately not, Fortnite is only available on PC/Consoles and not available on phones/ipads due to a legal issue.</p>
+    <p>An alternative is to use GeForce Now (Limited Time Gameplay) or Xbox Cloud Gaming (Unlimited Time Gaming). Xbox Cloud Gaming has Unlimited Time Gaming but less performance, while GeForce Now has high quality but 1-hour sessions and a wait time to play Fortnite.</p>
 
+    <h2>Benefits Of Fortnite</h2>
+    <ul>
+        <li>Enhances strategic thinking, problem-solving, and hand-eye coordination.</li>
+        <li>Promotes teamwork and global social interaction.</li>
+        <li>Boosts creativity through custom map-building.</li>
+        <li>Provides entertainment and stress relief.</li>
+        <li>Builds a sense of community with events and challenges.</li>
+    </ul>
 
+    <!-- Learn More Button -->
+    <button class="cool-button" onclick="location.href='about.html'">Learn More About Fortnite</button>
 
+    <!-- Back to Top Button -->
+    <button class="back-to-top" onclick="window.scrollTo({ top: 0, behavior: 'smooth' })">Back to Top</button>
 
-</p>
-</p>
-</h2>
+    <footer>
+        <p>&copy; 2024 Fortnite Fan Website</p>
+    </footer>
 
 </body>
-
 </html>
