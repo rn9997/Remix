@@ -70,6 +70,25 @@
             box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
         }
 
+        .fancy-button {
+            font-size: 1.3em;
+            font-weight: 600;
+            padding: 15px 40px;
+            color: white;
+            background: linear-gradient(90deg, rgb(255, 94, 0), rgb(255, 154, 0)); /* Bright orange gradient */
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            display: block;
+            margin: 30px auto;
+        }
+
+        .fancy-button:hover {
+            transform: scale(1.2);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+        }
+
         .back-to-top {
             position: fixed;
             bottom: 20px;
@@ -113,14 +132,21 @@
         <li>Creates a sense of community through events and challenges.</li>
     </ul>
 
-    <button class="cool-button" onclick="location.href='https://www.fortnite.com/news?lang=en-US'">Learn More About Fortnite</button>
+    <!-- About Me Section -->
+    <h2>About Me</h2>
+    <p>Hi, I'm Raihan (a.k.a. Reginald). I'm a gamer, student, and creator of this website. I love gaming, especially Fortnite, because of its engaging gameplay and creativity. I also enjoy building websites, including this one and my About Myself page!</p>
 
+    <!-- Fancy Button -->
+    <button class="fancy-button" onclick="location.href='https://rn9997.github.io/about-myself-project/'">Visit My About Page</button>
 
+    <!-- Back to Top Button -->
     <button class="back-to-top" onclick="window.scrollTo({ top: 0, behavior: 'smooth' })">Back to Top</button>
 
+    <!-- Footer -->
     <footer>
         <p>&copy; 2024 Fortnite Fan Website | All rights reserved.</p>
     </footer>
 
 </body>
 </html>
+
