@@ -57,7 +57,27 @@
             margin-top: 30px;
         }
 
-        /* Smaller Toggle Button Styling */
+        /* About Me Button */
+        .fancy-button {
+            font-size: 1.3em;
+            font-weight: 600;
+            padding: 15px 40px;
+            color: white;
+            background: linear-gradient(90deg, rgb(255, 94, 0), rgb(255, 154, 0)); /* Bright orange gradient */
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            display: block;
+            margin: 30px auto;
+        }
+
+        .fancy-button:hover {
+            transform: scale(1.2);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+        }
+
+        /* Smaller Dark Mode Toggle Button */
         .dark-mode-toggle {
             position: fixed;
             top: 20px;
@@ -66,7 +86,7 @@
             font-weight: 600;
             padding: 8px 15px; /* Smaller padding */
             color: white;
-            background: linear-gradient(90deg, rgb(255, 94, 0), rgb(255, 154, 0)); /* Bright orange gradient */
+            background: linear-gradient(90deg, rgb(138, 43, 226), rgb(186, 85, 211)); /* Purple gradient */
             border: none;
             border-radius: 15px;
             cursor: pointer;
@@ -87,7 +107,7 @@
     <h1>Who Am I?</h1>
     <p>Hi, I'm Raihan (a.k.a. Reginald). I'm a gamer and the creator of this website. I enjoy Fortnite for its fun gameplay and creativity. I also build websites to share my passions.</p>
 
-    <!-- Fancy Button -->
+    <!-- About Me Button -->
     <button class="fancy-button" onclick="location.href='https://rn9997.github.io/about-myself-project/'">Visit My About Page</button>
 
     <!-- Fortnite Content -->
