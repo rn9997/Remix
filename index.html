@@ -77,6 +77,25 @@
             box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
         }
 
+        /* Learn More Button */
+        .cool-button {
+            font-size: 1.2em;
+            font-weight: 500;
+            padding: 15px 30px;
+            color: white;
+            background: linear-gradient(45deg, rgb(138, 43, 226), rgb(186, 85, 211)); /* Bright purple gradient */
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            margin: 20px;
+        }
+
+        .cool-button:hover {
+            transform: scale(1.1);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+        }
+
         /* Smaller Dark Mode Toggle Button */
         .dark-mode-toggle {
             position: fixed;
@@ -96,6 +115,26 @@
         .dark-mode-toggle:hover {
             transform: scale(1.1);
             box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Back to Top Button */
+        .back-to-top {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            padding: 15px 20px;
+            font-size: 1em;
+            color: white;
+            background: linear-gradient(45deg, rgb(138, 43, 226), rgb(186, 85, 211));
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s;
+        }
+
+        .back-to-top:hover {
+            transform: scale(1.1);
         }
     </style>
 </head>
@@ -129,7 +168,11 @@
         <li>Creates a sense of community through events and challenges.</li>
     </ul>
 
+    <!-- Learn More Button -->
     <button class="cool-button" onclick="location.href='https://www.fortnite.com/news?lang=en-US'">Learn More About Fortnite</button>
+
+    <!-- Back to Top Button -->
+    <button class="back-to-top" onclick="window.scrollTo({ top: 0, behavior: 'smooth' })">Back to Top</button>
 
     <!-- Footer -->
     <footer>
