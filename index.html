@@ -4,142 +4,147 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Fortnite</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet"> <!-- Modern font -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
     <style>
-        /* Background: RGB Fortnite Color */
+        /* Background Gradient - Purple Theme */
         body {
-            background: rgb(45, 0, 255); /* Dark Blue */
-            background: linear-gradient(45deg, rgb(45, 0, 255), rgb(255, 0, 255), rgb(0, 255, 128)); /* RGB gradient with Fortnite colors */
-            color: #1a3d7c; /* Dark Blue Text for readability */
-            font-family: 'Poppins', sans-serif; /* Modern readable font */
+            background: linear-gradient(45deg, rgb(128, 0, 255), rgb(75, 0, 130)); /* Deep purple gradient */
+            font-family: 'Roboto', sans-serif; /* Modern and clean font */
             margin: 0;
             padding: 0;
             text-align: center;
         }
 
+        /* Purple Text */
+        h1, h2, p, ul li {
+            color: rgb(230, 230, 255); /* Light purple for readability */
+        }
+
         h1 {
-            font-size: 3.5em;
-            font-weight: 600;
-            color: white;
+            font-size: 4em;
+            font-weight: 700;
             margin-top: 20px;
         }
 
         h2 {
             font-size: 2.5em;
-            margin-top: 20px;
-            color: #ffffff;
+            font-weight: 500;
+            margin-top: 30px;
         }
 
-        p, ul {
-            font-size: 1.2em;
-            line-height: 1.6;
-            margin: 20px 0;
-            color: #e6e6e6; /* Lighter grey text for paragraphs */
+        p, ul li {
+            font-size: 1.3em;
+            line-height: 1.8;
+            margin: 10px 20px;
         }
 
-        /* Button Styling with Fortnite RGB colors */
+        ul {
+            list-style-type: disc;
+            margin: 20px auto;
+            padding: 0;
+            max-width: 600px;
+            text-align: left;
+        }
+
+        ul li {
+            margin: 10px 0;
+        }
+
+        /* Button Styling */
         .cool-button {
-            font-size: 18px;
+            font-size: 1.2em;
+            font-weight: 500;
             padding: 15px 30px;
             color: white;
-            background: linear-gradient(45deg, #8a2be2, #32cd32); /* Fortnite Purple and Green */
-            background-size: 200% 200%;
+            background: linear-gradient(45deg, rgb(138, 43, 226), rgb(186, 85, 211)); /* Bright purple gradient */
             border: none;
-            border-radius: 12px;
+            border-radius: 10px;
             cursor: pointer;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-            transition: all 0.3s ease;
-            animation: gradient 3s infinite;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            margin: 20px;
         }
 
         .cool-button:hover {
             transform: scale(1.1);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
         }
 
-        /* Gradient Animation for buttons */
-        @keyframes gradient {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
+        footer {
+            margin-top: 50px;
+            font-size: 1em;
+            color: rgb(200, 200, 255); /* Softer purple for footer text */
         }
 
-        /* Back to Top Button Styling */
+        /* Back to Top Button */
         .back-to-top {
-            font-size: 18px;
-            padding: 15px 30px;
-            color: white;
-            background: linear-gradient(45deg, #8a2be2, #32cd32); /* Purple and Green */
-            background-size: 200% 200%;
-            border: none;
-            border-radius: 12px;
-            cursor: pointer;
             position: fixed;
             bottom: 20px;
             right: 20px;
+            padding: 15px 20px;
+            font-size: 1em;
+            color: white;
+            background: linear-gradient(45deg, rgb(138, 43, 226), rgb(186, 85, 211));
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-            transition: all 0.3s ease;
+            transition: transform 0.3s;
         }
 
         .back-to-top:hover {
             transform: scale(1.1);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
         }
 
-        /* Footer Styling */
-        footer {
-            margin-top: 50px;
-            font-size: 1em;
-            color: #ffffff;
-        }
-
-        /* Mobile Responsiveness */
+        /* Media Queries for Mobile Responsiveness */
         @media (max-width: 600px) {
             h1 {
-                font-size: 2.5em;
+                font-size: 3em;
             }
+
             h2 {
                 font-size: 2em;
             }
-            p, ul {
+
+            p, ul li {
                 font-size: 1em;
+            }
+
+            .cool-button {
+                font-size: 1em;
+                padding: 10px 20px;
             }
         }
     </style>
 </head>
 <body>
 
-    <!-- Main Content -->
     <h1>Fortnite</h1>
-    <p>This website is going to be based around Fortnite</p>
+    <p>Welcome to the ultimate guide to Fortnite!</p>
 
     <h2>What is Fortnite?</h2>
-    <p>Fortnite Battle Royale, a free-to-play gamemode, allows up to 100 players to interact, fighting to be the last person standing. Fortnite is a popular metaverse platform.</p>
+    <p>Fortnite Battle Royale is a free-to-play mode where up to 100 players compete to be the last one standing. It's also a massive platform for creativity and events.</p>
 
     <h2>Is Fortnite fun?</h2>
-    <p>Absolutely, Fortnite is an intense, creative game designed for 13+ as it includes fighting, shooting, and more. Many Fortnite players love the game.</p>
+    <p>Fortnite offers a mix of action, creativity, and challenges. It's fun and designed for players aged 13+ due to its competitive nature.</p>
 
     <h2>Reviews</h2>
-    <p>Unfortunately not, Fortnite is only available on PC/Consoles and not available on phones/ipads due to a legal issue.</p>
-    <p>An alternative is to use GeForce Now (Limited Time Gameplay) or Xbox Cloud Gaming (Unlimited Time Gaming). Xbox Cloud Gaming has Unlimited Time Gaming but less performance, while GeForce Now has high quality but 1-hour sessions and a wait time to play Fortnite.</p>
+    <p>Fortnite isn't currently available on mobile devices due to legal issues, but it can still be played on PC, consoles, and cloud platforms like GeForce Now and Xbox Cloud Gaming.</p>
 
-    <h2>Benefits Of Fortnite</h2>
+    <h2>Benefits of Playing Fortnite</h2>
     <ul>
-        <li>Enhances strategic thinking, problem-solving, and hand-eye coordination.</li>
-        <li>Promotes teamwork and global social interaction.</li>
-        <li>Boosts creativity through custom map-building.</li>
-        <li>Provides entertainment and stress relief.</li>
-        <li>Builds a sense of community with events and challenges.</li>
+        <li>Improves strategic thinking and hand-eye coordination.</li>
+        <li>Encourages teamwork and social interaction worldwide.</li>
+        <li>Boosts creativity with its custom map-building feature.</li>
+        <li>Provides entertainment and a fun way to relax.</li>
+        <li>Creates a sense of community through events and challenges.</li>
     </ul>
 
-    <!-- Learn More Button -->
     <button class="cool-button" onclick="location.href='about.html'">Learn More About Fortnite</button>
 
-    <!-- Back to Top Button -->
     <button class="back-to-top" onclick="window.scrollTo({ top: 0, behavior: 'smooth' })">Back to Top</button>
 
     <footer>
-        <p>&copy; 2024 Fortnite Fan Website</p>
+        <p>&copy; 2024 Fortnite Fan Website | All rights reserved.</p>
     </footer>
 
 </body>
