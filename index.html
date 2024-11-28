@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fortnite Fan Website - Winter Mode</title>
+    <title>Fortnite Fan Website</title>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
     <style>
         /* General Styles */
@@ -17,9 +17,15 @@
             text-align: center; /* Center text alignment */
         }
 
+        h1 {
+            margin-top: 20px; /* Move title higher */
+            font-size: 3em;
+            text-transform: uppercase;
+        }
+
         /* Winter Mode Styles */
         body.winter-mode {
-            background: url('https://cdn.pixabay.com/photo/2016/01/09/18/27/winter-1139971_960_720.jpg') no-repeat center center fixed; /* Winter image */
+            background: url('https://cdn.pixabay.com/photo/2016/01/09/18/27/winter-1139971_960_720.jpg') no-repeat center center fixed;
             background-size: cover; /* Stretch background */
             color: rgb(0, 51, 102); /* Deep blue text */
         }
@@ -30,55 +36,11 @@
             color: rgb(255, 255, 255); /* White text for dark mode */
         }
 
-        /* Snow Animation */
-        .snowflake {
-            position: fixed;
-            top: -10%;
-            left: 50%;
-            font-size: 1.5em;
-            color: white;
-            animation: snow 10s linear infinite;
-            opacity: 0.8;
-            display: none; /* Default hidden */
-        }
-
-        body.winter-mode .snowflake {
-            display: block; /* Show snowflakes in Winter Mode */
-        }
-
-        @keyframes snow {
-            0% { transform: translateX(0) translateY(0); }
-            100% { transform: translateX(200px) translateY(100vh); }
-        }
-
-        /* Frosted Content Box (ONLY in Winter Mode) */
-        .content-wrapper {
-            max-width: 800px;
-            margin: 10px auto; /* Higher placement */
-            padding: 20px;
-            border-radius: 15px;
-            transition: background 0.3s, box-shadow 0.3s;
-        }
-
-        body.winter-mode .content-wrapper {
-            background: rgba(255, 255, 255, 0.7); /* Frosted glass effect */
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
-        }
-
-        /* Frosty Heading and Text Effect (ONLY in Winter Mode) */
-        .snowy {
-            text-shadow: none;
-        }
-
-        body.winter-mode .snowy {
-            text-shadow: 0 0 10px white, 0 0 20px rgb(173, 216, 230), 0 0 30px rgb(135, 206, 250);
-        }
-
         /* Buttons */
         .button {
-            font-size: 0.8em; /* Smaller font size */
+            font-size: 0.8em;
             font-weight: 600;
-            padding: 8px 12px; /* Smaller padding */
+            padding: 10px 20px;
             color: white;
             background: linear-gradient(90deg, rgb(138, 43, 226), rgb(186, 85, 211)); /* Purple gradient */
             border: none;
@@ -99,8 +61,8 @@
         .about-me-button {
             font-size: 1em;
             font-weight: 700;
-            padding: 15px 20px; /* Larger padding for size */
-            background: linear-gradient(90deg, rgb(255, 94, 0), rgb(255, 154, 0)); /* Bright orange gradient */
+            padding: 15px 20px;
+            background: linear-gradient(90deg, rgb(255, 94, 0), rgb(255, 154, 0));
         }
 
         /* Back to Top Button */
@@ -109,44 +71,45 @@
             bottom: 20px;
             right: 20px;
         }
+
+        /* Content Styling */
+        .content-wrapper {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            border-radius: 15px;
+        }
     </style>
 </head>
 <body>
 
-    <!-- Snowflakes -->
-    <div class="snowflake" style="left: 10%;">❄️</div>
-    <div class="snowflake" style="left: 30%;">❄️</div>
-    <div class="snowflake" style="left: 50%;">❄️</div>
-    <div class="snowflake" style="left: 70%;">❄️</div>
-    <div class="snowflake" style="left: 90%;">❄️</div>
+    <!-- Title -->
+    <h1>Fortnite Fan Website</h1>
 
-    <!-- Winter Mode Button -->
+    <!-- Buttons -->
+    <button id="darkModeButton" class="button" onclick="toggleDarkMode()">Dark Mode</button>
     <button class="button" onclick="toggleWinterMode()">Winter Mode</button>
-
-    <!-- Dark Mode Button -->
-    <button class="button" onclick="toggleDarkMode()">Dark Mode</button>
-
-    <!-- Back to Top Button -->
     <button class="button back-to-top" onclick="window.scrollTo({ top: 0, behavior: 'smooth' })">Back to Top</button>
 
+    <!-- Content -->
     <div class="content-wrapper">
-        <h1 class="snowy">Who Am I?</h1>
+        <h2>Who Am I?</h2>
         <p>Hi, I'm Raihan (a.k.a. Reginald). I'm a gamer and the creator of this website. I enjoy Fortnite for its fun gameplay and creativity. I also build websites to share my passions.</p>
 
         <!-- About Me Button -->
         <button class="button about-me-button" onclick="location.href='https://rn9997.github.io/about-myself-project/'">Visit My About Page</button>
 
         <!-- Fortnite Content -->
-        <h2 class="snowy">What is Fortnite?</h2>
+        <h2>What is Fortnite?</h2>
         <p>Fortnite Battle Royale is a free-to-play mode where up to 100 players compete to be the last one standing. It's also a massive platform for creativity and events.</p>
 
-        <h2 class="snowy">Is Fortnite fun?</h2>
+        <h2>Is Fortnite fun?</h2>
         <p>Fortnite offers a mix of action, creativity, and challenges. It's fun and designed for players aged 12+ due to its competitive nature.</p>
 
-        <h2 class="snowy">Can you play Fortnite on all devices?</h2>
+        <h2>Can you play Fortnite on all devices?</h2>
         <p>Fortnite isn't currently available on mobile devices due to legal issues, but it can still be played on PC, consoles, and cloud platforms like GeForce Now and Xbox Cloud Gaming.</p>
 
-        <h2 class="snowy">Benefits of Playing Fortnite</h2>
+        <h2>Benefits of Playing Fortnite</h2>
         <ul>
             <li>Improves strategic thinking and hand-eye coordination.</li>
             <li>Encourages teamwork and social interaction worldwide.</li>
@@ -164,8 +127,16 @@
     <script>
         // JavaScript to Toggle Dark Mode
         function toggleDarkMode() {
+            const darkModeButton = document.getElementById('darkModeButton');
             document.body.classList.toggle('dark-mode');
             document.body.classList.remove('winter-mode'); // Remove Winter Mode if active
+
+            // Toggle Button Text
+            if (document.body.classList.contains('dark-mode')) {
+                darkModeButton.textContent = "Light Mode";
+            } else {
+                darkModeButton.textContent = "Dark Mode";
+            }
         }
 
         // JavaScript to Toggle Winter Mode
