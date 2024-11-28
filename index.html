@@ -34,6 +34,11 @@
             color: white;
             animation: snow 10s linear infinite;
             opacity: 0.8;
+            display: none; /* Default hidden */
+        }
+
+        body.winter-mode .snowflake {
+            display: block; /* Show snowflakes in Winter Mode */
         }
 
         @keyframes snow {
@@ -41,14 +46,12 @@
             100% { transform: translateX(200px) translateY(100vh); }
         }
 
-        /* Frosted Content Box (only in Winter Mode) */
+        /* Frosted Content Box (ONLY in Winter Mode) */
         .content-wrapper {
             max-width: 800px;
-            margin: 20px auto;
+            margin: 10px auto; /* Higher placement */
             padding: 20px;
-            background: rgba(255, 255, 255, 0); /* Default transparent */
             border-radius: 15px;
-            box-shadow: none;
             transition: background 0.3s, box-shadow 0.3s;
         }
 
@@ -57,7 +60,7 @@
             box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
         }
 
-        /* Frosty Heading and Text Effect (only in Winter Mode) */
+        /* Frosty Heading and Text Effect (ONLY in Winter Mode) */
         .snowy {
             text-shadow: none;
         }
@@ -68,7 +71,7 @@
 
         /* Buttons */
         .button {
-            font-size: 0.8em;
+            font-size: 0.8em; /* Smaller font size */
             font-weight: 600;
             padding: 8px 12px; /* Smaller padding */
             color: white;
@@ -85,6 +88,14 @@
         .button:hover {
             transform: scale(1.1);
             box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Larger "About Me" Button */
+        .about-me-button {
+            font-size: 1em;
+            font-weight: 700;
+            padding: 15px 20px; /* Larger padding for size */
+            background: linear-gradient(90deg, rgb(255, 94, 0), rgb(255, 154, 0)); /* Bright orange gradient */
         }
 
         /* Back to Top Button */
@@ -116,6 +127,9 @@
     <div class="content-wrapper">
         <h1 class="snowy">Who Am I?</h1>
         <p>Hi, I'm Raihan (a.k.a. Reginald). I'm a gamer and the creator of this website. I enjoy Fortnite for its fun gameplay and creativity. I also build websites to share my passions.</p>
+
+        <!-- About Me Button -->
+        <button class="button about-me-button" onclick="location.href='https://rn9997.github.io/about-myself-project/'">Visit My About Page</button>
 
         <!-- Fortnite Content -->
         <h2 class="snowy">What is Fortnite?</h2>
