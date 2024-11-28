@@ -3,116 +3,86 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fortnite Fan Website</title>
+    <title>Fortnite Fan Website - Winter Mode</title>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
     <style>
-        /* Default Light Mode Styles */
+        /* General Styles */
         body {
-            background: linear-gradient(rgb(108, 51, 255), rgb(255, 255, 255)); /* Purple to white gradient */
+            background: linear-gradient(rgb(108, 51, 255), rgb(255, 255, 255)); /* Default Gradient */
             font-family: 'Roboto', sans-serif;
             margin: 0;
             padding: 0;
             color: rgb(0, 0, 0); /* Black text */
-            transition: background-color 0.3s, color 0.3s; /* Smooth theme transition */
+            transition: background-color 0.3s, color 0.3s; /* Smooth transitions */
+            text-align: center; /* Center text alignment */
+            overflow: hidden; /* Prevent scrollbars for snow animation */
         }
 
-        /* Dark Mode Styles */
-        body.dark-mode {
-            background: linear-gradient(rgb(36, 36, 36), rgb(0, 0, 0)); /* Dark gradient */
-            color: rgb(255, 255, 255); /* White text */
+        /* Winter Mode Styles */
+        body.winter-mode {
+            background: url('https://cdn.pixabay.com/photo/2016/01/09/18/27/winter-1139971_960_720.jpg') no-repeat center center fixed; /* Winter image */
+            background-size: cover; /* Stretch background */
+            color: rgb(0, 51, 102); /* Deep blue text */
         }
 
-        /* Text Alignment */
-        h1, h2 {
-            text-align: center; /* Center headings only */
-        }
-
-        p, ul {
-            text-align: left; /* Left-align paragraphs and lists */
-            margin: 0 auto;
-            max-width: 800px; /* Constrain width for better readability */
-        }
-
-        ul {
-            list-style-type: disc;
-            padding-left: 40px; /* Add space for list bullets */
-        }
-
-        footer {
-            text-align: center; /* Center footer text */
-            margin-top: 50px;
-            font-size: 1em;
-        }
-
-        /* Heading Styles */
-        h1 {
-            font-size: 4em;
-            font-weight: 700;
-            margin-top: 20px;
-        }
-
-        h2 {
-            font-size: 2.5em;
-            font-weight: 500;
-            margin-top: 30px;
-        }
-
-        /* About Me Button */
-        .fancy-button {
-            font-size: 1.3em;
-            font-weight: 600;
-            padding: 15px 40px;
-            color: white;
-            background: linear-gradient(90deg, rgb(255, 94, 0), rgb(255, 154, 0)); /* Bright orange gradient */
-            border: none;
-            border-radius: 50px;
-            cursor: pointer;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            display: block;
-            margin: 30px auto;
-        }
-
-        .fancy-button:hover {
-            transform: scale(1.2);
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
-        }
-
-        /* Learn More Button */
-        .cool-button {
-            font-size: 1.2em;
-            font-weight: 500;
-            padding: 15px 30px;
-            color: white;
-            background: linear-gradient(45deg, rgb(138, 43, 226), rgb(186, 85, 211)); /* Bright purple gradient */
-            border: none;
-            border-radius: 10px;
-            cursor: pointer;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            margin: 20px;
-        }
-
-        .cool-button:hover {
-            transform: scale(1.1);
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
-        }
-
-        /* Smaller Dark Mode Toggle Button */
-        .dark-mode-toggle {
+        /* Snow Animation */
+        .snowflake {
             position: fixed;
-            top: 20px;
-            right: 20px;
-            font-size: 0.8em; /* Smaller font size */
+            top: -10%;
+            left: 50%;
+            font-size: 1.5em;
+            color: white;
+            animation: snow 10s linear infinite;
+            opacity: 0.8;
+        }
+
+        @keyframes snow {
+            0% { transform: translateX(0) translateY(0); }
+            100% { transform: translateX(200px) translateY(100vh); }
+        }
+
+        /* Frosted Content Box (only in Winter Mode) */
+        .content-wrapper {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0); /* Default transparent */
+            border-radius: 15px;
+            box-shadow: none;
+            transition: background 0.3s, box-shadow 0.3s;
+        }
+
+        body.winter-mode .content-wrapper {
+            background: rgba(255, 255, 255, 0.7); /* Frosted glass effect */
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Frosty Heading and Text Effect (only in Winter Mode) */
+        .snowy {
+            text-shadow: none;
+        }
+
+        body.winter-mode .snowy {
+            text-shadow: 0 0 10px white, 0 0 20px rgb(173, 216, 230), 0 0 30px rgb(135, 206, 250);
+        }
+
+        /* Buttons */
+        .button {
+            font-size: 0.8em;
             font-weight: 600;
-            padding: 8px 15px; /* Smaller padding */
+            padding: 8px 12px; /* Smaller padding */
             color: white;
             background: linear-gradient(90deg, rgb(138, 43, 226), rgb(186, 85, 211)); /* Purple gradient */
             border: none;
             border-radius: 15px;
             cursor: pointer;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
+            margin: 10px;
+            text-align: center;
+            display: inline-block;
         }
 
-        .dark-mode-toggle:hover {
+        .button:hover {
             transform: scale(1.1);
             box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
         }
@@ -122,57 +92,50 @@
             position: fixed;
             bottom: 20px;
             right: 20px;
-            padding: 15px 20px;
-            font-size: 1em;
-            color: white;
-            background: linear-gradient(45deg, rgb(138, 43, 226), rgb(186, 85, 211));
-            border: none;
-            border-radius: 50px;
-            cursor: pointer;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-            transition: transform 0.3s;
-        }
-
-        .back-to-top:hover {
-            transform: scale(1.1);
         }
     </style>
 </head>
 <body>
 
-    <!-- Dark Mode Toggle Button -->
-    <button class="dark-mode-toggle" onclick="toggleDarkMode()">Dark Mode</button>
+    <!-- Snowflakes -->
+    <div class="snowflake" style="left: 10%;">❄️</div>
+    <div class="snowflake" style="left: 30%;">❄️</div>
+    <div class="snowflake" style="left: 50%;">❄️</div>
+    <div class="snowflake" style="left: 70%;">❄️</div>
+    <div class="snowflake" style="left: 90%;">❄️</div>
 
-    <h1>Who Am I?</h1>
-    <p>Hi, I'm Raihan (a.k.a. Reginald). I'm a gamer and the creator of this website. I enjoy Fortnite for its fun gameplay and creativity. I also build websites to share my passions.</p>
+    <!-- Winter Mode Button -->
+    <button class="button" onclick="toggleWinterMode()">Winter Mode</button>
 
-    <!-- About Me Button -->
-    <button class="fancy-button" onclick="location.href='https://rn9997.github.io/about-myself-project/'">Visit My About Page</button>
-
-    <!-- Fortnite Content -->
-    <h2>What is Fortnite?</h2>
-    <p>Fortnite Battle Royale is a free-to-play mode where up to 100 players compete to be the last one standing. It's also a massive platform for creativity and events.</p>
-
-    <h2>Is Fortnite fun?</h2>
-    <p>Fortnite offers a mix of action, creativity, and challenges. It's fun and designed for players aged 12+ due to its competitive nature.</p>
-
-    <h2>Can you play Fortnite on all devices?</h2>
-    <p>Fortnite isn't currently available on mobile devices due to legal issues, but it can still be played on PC, consoles, and cloud platforms like GeForce Now and Xbox Cloud Gaming.</p>
-
-    <h2>Benefits of Playing Fortnite</h2>
-    <ul>
-        <li>Improves strategic thinking and hand-eye coordination.</li>
-        <li>Encourages teamwork and social interaction worldwide.</li>
-        <li>Boosts creativity with its custom map-building feature.</li>
-        <li>Provides entertainment and a fun way to relax.</li>
-        <li>Creates a sense of community through events and challenges.</li>
-    </ul>
-
-    <!-- Learn More Button -->
-    <button class="cool-button" onclick="location.href='https://www.fortnite.com/news?lang=en-US'">Learn More About Fortnite</button>
+    <!-- Dark Mode Button -->
+    <button class="button" onclick="toggleDarkMode()">Dark Mode</button>
 
     <!-- Back to Top Button -->
-    <button class="back-to-top" onclick="window.scrollTo({ top: 0, behavior: 'smooth' })">Back to Top</button>
+    <button class="button back-to-top" onclick="window.scrollTo({ top: 0, behavior: 'smooth' })">Back to Top</button>
+
+    <div class="content-wrapper">
+        <h1 class="snowy">Who Am I?</h1>
+        <p>Hi, I'm Raihan (a.k.a. Reginald). I'm a gamer and the creator of this website. I enjoy Fortnite for its fun gameplay and creativity. I also build websites to share my passions.</p>
+
+        <!-- Fortnite Content -->
+        <h2 class="snowy">What is Fortnite?</h2>
+        <p>Fortnite Battle Royale is a free-to-play mode where up to 100 players compete to be the last one standing. It's also a massive platform for creativity and events.</p>
+
+        <h2 class="snowy">Is Fortnite fun?</h2>
+        <p>Fortnite offers a mix of action, creativity, and challenges. It's fun and designed for players aged 12+ due to its competitive nature.</p>
+
+        <h2 class="snowy">Can you play Fortnite on all devices?</h2>
+        <p>Fortnite isn't currently available on mobile devices due to legal issues, but it can still be played on PC, consoles, and cloud platforms like GeForce Now and Xbox Cloud Gaming.</p>
+
+        <h2 class="snowy">Benefits of Playing Fortnite</h2>
+        <ul>
+            <li>Improves strategic thinking and hand-eye coordination.</li>
+            <li>Encourages teamwork and social interaction worldwide.</li>
+            <li>Boosts creativity with its custom map-building feature.</li>
+            <li>Provides entertainment and a fun way to relax.</li>
+            <li>Creates a sense of community through events and challenges.</li>
+        </ul>
+    </div>
 
     <!-- Footer -->
     <footer>
@@ -183,6 +146,13 @@
         // JavaScript to Toggle Dark Mode
         function toggleDarkMode() {
             document.body.classList.toggle('dark-mode');
+            document.body.classList.remove('winter-mode'); // Remove Winter Mode if active
+        }
+
+        // JavaScript to Toggle Winter Mode
+        function toggleWinterMode() {
+            document.body.classList.toggle('winter-mode');
+            document.body.classList.remove('dark-mode'); // Remove Dark Mode if active
         }
     </script>
 
