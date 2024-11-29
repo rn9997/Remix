@@ -81,18 +81,18 @@
             box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
         }
 
-        /* Back-to-Top Button */
-        .back-to-top {
+        /* Action Buttons */
+        .action-button {
             position: fixed;
             bottom: 20px;
             right: 20px;
-            font-size: 2em;
+            font-size: 1.5em;
             color: white;
             background: rgb(138, 43, 226);
             border: none;
             border-radius: 50%;
-            width: 50px;
-            height: 50px;
+            width: 40px;
+            height: 40px;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -101,7 +101,12 @@
             transition: transform 0.3s ease;
         }
 
-        .back-to-top:hover {
+        .action-button.go-down {
+            right: 70px;
+            background: rgb(0, 123, 255);
+        }
+
+        .action-button:hover {
             transform: scale(1.2);
         }
 
@@ -152,10 +157,15 @@
     <h1>Fortnite Fan Website</h1>
 
     <!-- Buttons -->
-    <button id="darkModeButton" class="button" onclick="toggleDarkMode()">Dark Mode</button>
-    <button class="button" onclick="toggleWinterMode()">Winter Mode</button>
-    <button class="button" onclick="openCursorUI()">Custom Cursor</button>
-    <button class="back-to-top" onclick="window.scrollTo({ top: 0, behavior: 'smooth' })">↑</button>
+    <div id="buttons-section">
+        <button id="darkModeButton" class="button" onclick="toggleDarkMode()">Dark Mode</button>
+        <button class="button" onclick="toggleWinterMode()">Winter Mode</button>
+        <button class="button" onclick="openCursorUI()">Custom Cursor</button>
+    </div>
+
+    <!-- Go Down and Back to Top Buttons -->
+    <button class="action-button go-down" onclick="goDown()">↓</button>
+    <button class="action-button" onclick="window.scrollTo({ top: 0, behavior: 'smooth' })">↑</button>
 
     <!-- Snowflakes -->
     <div class="snowflake" style="left: 10%;">❄️</div>
@@ -169,7 +179,7 @@
         <button class="button" onclick="location.href='https://rn9997.github.io/about-myself-project/'">Visit My About Page</button>
     </div>
 
-    <!-- Categories Section -->
+    <!-- Fortnite Categories -->
     <div class="content-wrapper">
         <h2>What is Fortnite?</h2>
         <p>Fortnite is a multiplayer game where players compete in a last-man-standing format or explore creative modes.</p>
@@ -200,13 +210,18 @@
         <p>Fortnite has a thriving esports scene with tournaments like the Fortnite World Cup, attracting top players worldwide.</p>
     </div>
 
+    <div class="content-wrapper">
+        <h2>Fortnite Lore</h2>
+        <p>Fortnite features an evolving story with each season, connecting gameplay elements to its unique universe of characters and events.</p>
+    </div>
+
     <!-- Cursor UI -->
     <div class="cursor-ui" id="cursorUI">
         <h2>Custom Cursor Feature: IN PROGRESS</h2>
         <button class="button" onclick="closeCursorUI()">Close</button>
     </div>
 
-    <footer>
+    <footer id="footer">
         <p>&copy; 2024 Fortnite Fan Website | All rights reserved.</p>
     </footer>
 
@@ -227,6 +242,11 @@
 
         function closeCursorUI() {
             document.getElementById('cursorUI').classList.remove('active');
+        }
+
+        function goDown() {
+            const footer = document.getElementById('footer');
+            footer.scrollIntoView({ behavior: 'smooth' });
         }
     </script>
 </body>
