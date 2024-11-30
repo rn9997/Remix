@@ -21,12 +21,19 @@
             font-size: 3.5em;
             text-transform: uppercase;
             text-align: center;
+            color: rgb(255, 255, 255);
+            text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.7);
         }
 
         /* Dark Mode */
         body.dark-mode {
             background: linear-gradient(rgb(30, 30, 30), rgb(60, 60, 60));
             color: rgb(200, 200, 200);
+        }
+
+        body.dark-mode h1 {
+            color: rgb(138, 43, 226);
+            text-shadow: 2px 2px 10px rgba(0, 0, 0, 1);
         }
 
         /* Winter Mode */
@@ -53,17 +60,18 @@
         }
 
         @keyframes snow {
-            0% {
-                transform: translateX(0) translateY(0);
-            }
-            100% {
-                transform: translateX(200px) translateY(100vh);
-            }
+            0% { transform: translateX(0) translateY(0); }
+            100% { transform: translateX(200px) translateY(100vh); }
         }
 
-        /* Buttons */
+        /* Buttons Section */
+        #buttons-section {
+            text-align: center;
+            margin: 30px auto;
+        }
+
         .button {
-            font-size: 0.8em;
+            font-size: 1em;
             font-weight: 600;
             padding: 10px 20px;
             color: white;
@@ -120,6 +128,10 @@
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
         }
 
+        body.dark-mode .content-wrapper {
+            background: rgba(60, 60, 60, 0.9);
+        }
+
         /* Cursor UI Overlay */
         .cursor-ui {
             position: fixed;
@@ -147,16 +159,12 @@
         .cursor-ui h2 {
             margin-bottom: 20px;
         }
-
-        .cursor-ui button {
-            margin-top: 20px;
-        }
     </style>
 </head>
 <body>
     <h1>Fortnite Fan Website</h1>
 
-    <!-- Buttons -->
+    <!-- Centered Buttons -->
     <div id="buttons-section">
         <button id="darkModeButton" class="button" onclick="toggleDarkMode()">Dark Mode</button>
         <button class="button" onclick="toggleWinterMode()">Winter Mode</button>
@@ -179,37 +187,27 @@
         <button class="button" onclick="location.href='https://rn9997.github.io/about-myself-project/'">Visit My About Page</button>
     </div>
 
-    <!-- Fortnite Categories -->
+    <!-- Fortnite Sections -->
     <div class="content-wrapper">
         <h2>What is Fortnite?</h2>
         <p>Fortnite is a multiplayer game where players compete in a last-man-standing format or explore creative modes.</p>
     </div>
-
     <div class="content-wrapper">
         <h2>Fortnite Gameplay</h2>
         <p>Players build structures, gather resources, and engage in combat to survive and win. Fortnite is known for its vibrant art style and fast-paced gameplay.</p>
     </div>
-
     <div class="content-wrapper">
         <h2>Available Devices</h2>
         <p>Fortnite is available on PC, PlayStation, Xbox, and cloud platforms. Mobile availability is limited due to legal disputes.</p>
     </div>
-
     <div class="content-wrapper">
         <h2>Events and Updates</h2>
         <p>Epic Games regularly hosts live events and updates, adding new maps, characters, and challenges to keep the game fresh and engaging.</p>
     </div>
-
     <div class="content-wrapper">
         <h2>Creative Mode</h2>
         <p>Fortnite's Creative Mode allows players to design their own games and maps, fostering creativity and innovation.</p>
     </div>
-
-    <div class="content-wrapper">
-        <h2>Competitive Scene</h2>
-        <p>Fortnite has a thriving esports scene with tournaments like the Fortnite World Cup, attracting top players worldwide.</p>
-    </div>
-
     <div class="content-wrapper">
         <h2>Fortnite Lore</h2>
         <p>Fortnite features an evolving story with each season, connecting gameplay elements to its unique universe of characters and events.</p>
