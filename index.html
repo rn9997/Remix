@@ -8,60 +8,31 @@
     <style>
         /* General Styles */
         body {
-            background: linear-gradient(rgb(108, 51, 255), rgb(255, 255, 255));
+            background: #2c3e50;
             font-family: 'Roboto', sans-serif;
             margin: 0;
             padding: 0;
-            color: rgb(0, 0, 0);
+            color: #ecf0f1;
             transition: background-color 0.3s, color 0.3s;
         }
 
         h1 {
             margin-top: 20px;
-            font-size: 3.5em;
+            font-size: 3em;
             text-transform: uppercase;
             text-align: center;
-            color: rgb(255, 255, 255);
-            text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.7);
+            color: #e74c3c;
+            text-shadow: 2px 2px 15px rgba(0, 0, 0, 0.8);
         }
 
         /* Dark Mode */
         body.dark-mode {
-            background: linear-gradient(rgb(30, 30, 30), rgb(60, 60, 60));
-            color: rgb(200, 200, 200);
+            background: #121212;
+            color: #e0e0e0;
         }
 
         body.dark-mode h1 {
-            color: rgb(138, 43, 226);
-            text-shadow: 2px 2px 10px rgba(0, 0, 0, 1);
-        }
-
-        /* Winter Mode */
-        body.winter-mode {
-            background: url('https://cdn.pixabay.com/photo/2016/01/09/18/27/winter-1139971_960_720.jpg') no-repeat center center fixed;
-            background-size: cover;
-            color: rgb(0, 51, 102);
-        }
-
-        /* Snowflakes */
-        .snowflake {
-            position: fixed;
-            top: -10%;
-            left: 50%;
-            font-size: 1.5em;
-            color: white;
-            animation: snow 10s linear infinite;
-            opacity: 0.8;
-            display: none;
-        }
-
-        body.winter-mode .snowflake {
-            display: block;
-        }
-
-        @keyframes snow {
-            0% { transform: translateX(0) translateY(0); }
-            100% { transform: translateX(200px) translateY(100vh); }
+            color: #8e44ad;
         }
 
         /* Buttons Section */
@@ -74,19 +45,18 @@
             font-size: 1em;
             font-weight: 600;
             padding: 10px 20px;
-            color: white;
-            background: linear-gradient(90deg, rgb(138, 43, 226), rgb(186, 85, 211));
-            border: 2px solid white;
-            border-radius: 15px;
+            color: #ecf0f1;
+            background: #e74c3c;
+            border: 2px solid #ecf0f1;
+            border-radius: 10px;
             cursor: pointer;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            transition: background-color 0.3s, transform 0.3s ease;
             margin: 10px;
-            display: inline-block;
         }
 
         .button:hover {
+            background: #c0392b;
             transform: scale(1.1);
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
         }
 
         /* Action Buttons */
@@ -95,8 +65,8 @@
             bottom: 20px;
             right: 20px;
             font-size: 1.5em;
-            color: white;
-            background: rgb(138, 43, 226);
+            color: #ecf0f1;
+            background: #e74c3c;
             border: none;
             border-radius: 50%;
             width: 40px;
@@ -105,13 +75,13 @@
             justify-content: center;
             align-items: center;
             cursor: pointer;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
             transition: transform 0.3s ease;
         }
 
         .action-button.go-down {
             right: 70px;
-            background: rgb(0, 123, 255);
+            background: #3498db;
         }
 
         .action-button:hover {
@@ -123,41 +93,34 @@
             max-width: 800px;
             margin: 20px auto;
             padding: 20px;
-            border-radius: 15px;
-            background: rgba(255, 255, 255, 0.8);
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            border-radius: 10px;
+            background: #34495e;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
         }
 
         body.dark-mode .content-wrapper {
-            background: rgba(60, 60, 60, 0.9);
+            background: #1e1e1e;
         }
 
-        /* Cursor UI Overlay */
-        .cursor-ui {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.8);
-            color: white;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            z-index: 1000;
-            visibility: hidden;
-            opacity: 0;
-            transition: opacity 0.3s ease;
+        .content-wrapper h2 {
+            color: #f1c40f;
+            margin-bottom: 10px;
         }
 
-        .cursor-ui.active {
-            visibility: visible;
-            opacity: 1;
+        .content-wrapper p {
+            line-height: 1.8;
+            color: #ecf0f1;
         }
 
-        .cursor-ui h2 {
-            margin-bottom: 20px;
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: #34495e;
+            color: #bdc3c7;
+        }
+
+        body.dark-mode footer {
+            background: #1e1e1e;
         }
     </style>
 </head>
@@ -168,58 +131,46 @@
     <div id="buttons-section">
         <button id="darkModeButton" class="button" onclick="toggleDarkMode()">Dark Mode</button>
         <button class="button" onclick="toggleWinterMode()">Winter Mode</button>
-        <button class="button" onclick="openCursorUI()">Custom Cursor</button>
     </div>
 
-    <!-- Go Down and Back to Top Buttons -->
+    <!-- Action Buttons -->
     <button class="action-button go-down" onclick="goDown()">↓</button>
     <button class="action-button" onclick="window.scrollTo({ top: 0, behavior: 'smooth' })">↑</button>
 
-    <!-- Snowflakes -->
-    <div class="snowflake" style="left: 10%;">❄️</div>
-    <div class="snowflake" style="left: 50%;">❄️</div>
-    <div class="snowflake" style="left: 70%;">❄️</div>
-
-    <!-- About Me Section -->
+    <!-- About Section -->
     <div class="content-wrapper">
         <h2>About Me</h2>
-        <p>Hi, I'm Raihan (a.k.a. Reginald). I'm a gamer and the creator of this website. I enjoy Fortnite for its fun gameplay and creativity. I also build websites to share my passions.</p>
-        <button class="button" onclick="location.href='https://rn9997.github.io/about-myself-project/'">Visit My About Page</button>
+        <p>Hi, I'm Raihan (a.k.a. Reginald). I'm a gamer and the creator of this website. I enjoy Fortnite for its fun gameplay and creativity.</p>
+        <p>I’ve been building websites to showcase my passions. This project highlights my love for gaming and shares tips for fellow Fortnite players.</p>
     </div>
 
-    <!-- Fortnite Sections -->
+    <!-- Fortnite Information -->
     <div class="content-wrapper">
         <h2>What is Fortnite?</h2>
-        <p>Fortnite is a multiplayer game where players compete in a last-man-standing format or explore creative modes.</p>
+        <p>Fortnite is a popular multiplayer game offering various modes, from its iconic Battle Royale to an engaging Creative Mode. It combines action, strategy, and fun with stunning visuals.</p>
     </div>
+
     <div class="content-wrapper">
         <h2>Fortnite Gameplay</h2>
-        <p>Players build structures, gather resources, and engage in combat to survive and win. Fortnite is known for its vibrant art style and fast-paced gameplay.</p>
+        <p>The gameplay revolves around resource gathering, defensive building, and intense combat. Fortnite’s unique mechanics and fast-paced action make it stand out in the gaming world.</p>
     </div>
-    <div class="content-wrapper">
-        <h2>Available Devices</h2>
-        <p>Fortnite is available on PC, PlayStation, Xbox, and cloud platforms. Mobile availability is limited due to legal disputes.</p>
-    </div>
-    <div class="content-wrapper">
-        <h2>Events and Updates</h2>
-        <p>Epic Games regularly hosts live events and updates, adding new maps, characters, and challenges to keep the game fresh and engaging.</p>
-    </div>
+
     <div class="content-wrapper">
         <h2>Creative Mode</h2>
-        <p>Fortnite's Creative Mode allows players to design their own games and maps, fostering creativity and innovation.</p>
+        <p>Creative Mode empowers players to design their own maps, games, and challenges. It's a sandbox for creativity, fostering an environment where imagination thrives.</p>
     </div>
+
+    <div class="content-wrapper">
+        <h2>Events and Updates</h2>
+        <p>Fortnite frequently introduces updates, live events, and collaborations with franchises like Marvel and Star Wars, keeping the experience fresh and exciting for players.</p>
+    </div>
+
     <div class="content-wrapper">
         <h2>Fortnite Lore</h2>
-        <p>Fortnite features an evolving story with each season, connecting gameplay elements to its unique universe of characters and events.</p>
+        <p>The evolving storyline in Fortnite connects each season, offering immersive narratives and engaging players with new characters and events in its universe.</p>
     </div>
 
-    <!-- Cursor UI -->
-    <div class="cursor-ui" id="cursorUI">
-        <h2>Custom Cursor Feature: IN PROGRESS</h2>
-        <button class="button" onclick="closeCursorUI()">Close</button>
-    </div>
-
-    <footer id="footer">
+    <footer>
         <p>&copy; 2024 Fortnite Fan Website | All rights reserved.</p>
     </footer>
 
@@ -230,20 +181,8 @@
             darkModeButton.textContent = document.body.classList.contains('dark-mode') ? "Light Mode" : "Dark Mode";
         }
 
-        function toggleWinterMode() {
-            document.body.classList.toggle('winter-mode');
-        }
-
-        function openCursorUI() {
-            document.getElementById('cursorUI').classList.add('active');
-        }
-
-        function closeCursorUI() {
-            document.getElementById('cursorUI').classList.remove('active');
-        }
-
         function goDown() {
-            const footer = document.getElementById('footer');
+            const footer = document.querySelector('footer');
             footer.scrollIntoView({ behavior: 'smooth' });
         }
     </script>
