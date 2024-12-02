@@ -8,12 +8,14 @@
     <style>
         /* General Styles */
         body {
-            background: #2c3e50;
+            background: #2c3e50 url('https://i.imgur.com/XzHTwnW.jpg') no-repeat center center;
+            background-size: cover;
             font-family: 'Roboto', sans-serif;
             margin: 0;
             padding: 0;
             color: #ecf0f1;
             transition: background-color 0.3s, color 0.3s;
+            cursor: url('https://i.imgur.com/6I4Kwfn.png'), auto;
         }
 
         h1 {
@@ -25,14 +27,28 @@
             text-shadow: 2px 2px 15px rgba(0, 0, 0, 0.8);
         }
 
-        /* Dark Mode */
-        body.dark-mode {
-            background: #121212;
-            color: #e0e0e0;
+        /* Winter Mode */
+        body.winter-mode {
+            background: #dff9fb url('https://i.imgur.com/tL1V1Y3.jpg') no-repeat center center;
+            background-size: cover;
+            color: #130f40;
+            cursor: url('https://i.imgur.com/VmlJsyy.png'), auto;
         }
 
-        body.dark-mode h1 {
-            color: #8e44ad;
+        body.winter-mode h1 {
+            color: #2980b9;
+        }
+
+        body.winter-mode .snowflake, body.winter-mode .snowman {
+            display: block;
+        }
+
+        .snowflake, .snowman {
+            display: none;
+        }
+
+        body.winter-mode .button {
+            background: #2980b9;
         }
 
         /* Buttons Section */
@@ -59,57 +75,18 @@
             transform: scale(1.1);
         }
 
-        /* Action Buttons */
-        .action-button {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            font-size: 1.5em;
-            color: #ecf0f1;
-            background: #e74c3c;
-            border: none;
-            border-radius: 50%;
-            width: 40px;
-            height: 40px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            cursor: pointer;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
-            transition: transform 0.3s ease;
-        }
-
-        .action-button.go-down {
-            right: 70px;
-            background: #3498db;
-        }
-
-        .action-button:hover {
-            transform: scale(1.2);
-        }
-
         /* Content Styling */
         .content-wrapper {
             max-width: 800px;
             margin: 20px auto;
             padding: 20px;
             border-radius: 10px;
-            background: #34495e;
+            background: rgba(52, 73, 94, 0.8);
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
         }
 
-        body.dark-mode .content-wrapper {
-            background: #1e1e1e;
-        }
-
-        .content-wrapper h2 {
-            color: #f1c40f;
-            margin-bottom: 10px;
-        }
-
-        .content-wrapper p {
-            line-height: 1.8;
-            color: #ecf0f1;
+        body.winter-mode .content-wrapper {
+            background: rgba(116, 185, 255, 0.8);
         }
 
         footer {
@@ -119,8 +96,57 @@
             color: #bdc3c7;
         }
 
-        body.dark-mode footer {
-            background: #1e1e1e;
+        body.winter-mode footer {
+            background: #74b9ff;
+        }
+
+        /* Snowflake Animation */
+        .snowflake {
+            position: fixed;
+            top: -10px;
+            font-size: 1.5em;
+            color: #fff;
+            animation: fall 10s linear infinite;
+        }
+
+        @keyframes fall {
+            0% {
+                transform: translateY(-100px);
+                left: 0;
+            }
+            100% {
+                transform: translateY(100vh);
+                left: 100%;
+            }
+        }
+
+        /* Snowman */
+        .snowman {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 150px;
+        }
+
+        /* About Me Button */
+        .about-me-btn {
+            display: block;
+            width: 200px;
+            margin: 10px auto;
+            text-align: center;
+            background: #e74c3c;
+            color: #ecf0f1;
+            padding: 10px;
+            font-size: 1.2em;
+            font-weight: bold;
+            border-radius: 10px;
+            text-decoration: none;
+            transition: background 0.3s ease, transform 0.3s ease;
+        }
+
+        .about-me-btn:hover {
+            background: #c0392b;
+            transform: scale(1.1);
         }
     </style>
 </head>
@@ -130,60 +156,57 @@
     <!-- Centered Buttons -->
     <div id="buttons-section">
         <button id="darkModeButton" class="button" onclick="toggleDarkMode()">Dark Mode</button>
-        <button class="button" onclick="toggleWinterMode()">Winter Mode</button>
+        <button id="winterModeButton" class="button" onclick="toggleWinterMode()">Winter Mode</button>
     </div>
 
-    <!-- Action Buttons -->
-    <button class="action-button go-down" onclick="goDown()">↓</button>
-    <button class="action-button" onclick="window.scrollTo({ top: 0, behavior: 'smooth' })">↑</button>
-
     <!-- About Section -->
-    <div class="content-wrapper">
+    <div class="content-wrapper" id="about">
         <h2>About Me</h2>
-        <p>Hi, I'm Raihan (a.k.a. Reginald). I'm a gamer and the creator of this website. I enjoy Fortnite for its fun gameplay and creativity.</p>
-        <p>I’ve been building websites to showcase my passions. This project highlights my love for gaming and shares tips for fellow Fortnite players.</p>
+        <p>Hi, I'm Raihan (a.k.a. Reginald). I'm a gamer and the creator of this website. I love Fortnite for its creative gameplay, strategic challenges, and vibrant community.</p>
+        <p>This website is a hub for Fortnite fans, sharing gameplay tips, lore insights, and updates.</p>
+        <a href="https://rn9997.github.io/about-myself-project/" target="_blank" class="about-me-btn">More About Me</a>
     </div>
 
     <!-- Fortnite Information -->
-    <div class="content-wrapper">
+    <div class="content-wrapper" id="gameplay">
         <h2>What is Fortnite?</h2>
-        <p>Fortnite is a popular multiplayer game offering various modes, from its iconic Battle Royale to an engaging Creative Mode. It combines action, strategy, and fun with stunning visuals.</p>
+        <p>Fortnite is a genre-defining multiplayer game that combines fast-paced action, strategic gameplay, and an ever-evolving storyline. It offers modes like Battle Royale, Creative, and Save the World, catering to a diverse player base.</p>
     </div>
 
     <div class="content-wrapper">
         <h2>Fortnite Gameplay</h2>
-        <p>The gameplay revolves around resource gathering, defensive building, and intense combat. Fortnite’s unique mechanics and fast-paced action make it stand out in the gaming world.</p>
+        <p>Fortnite challenges players with its unique mix of shooting mechanics, resource gathering, and tactical building. The fast-paced gameplay ensures adrenaline-packed sessions.</p>
+        <p>The game's building mechanics add a strategic layer, letting players create defenses or high ground in the heat of battle.</p>
+        <p>Fortnite also incorporates seasonal changes, constantly refreshing gameplay with new mechanics and locations.</p>
     </div>
 
-    <div class="content-wrapper">
-        <h2>Creative Mode</h2>
-        <p>Creative Mode empowers players to design their own maps, games, and challenges. It's a sandbox for creativity, fostering an environment where imagination thrives.</p>
-    </div>
-
-    <div class="content-wrapper">
+    <div class="content-wrapper" id="events">
         <h2>Events and Updates</h2>
-        <p>Fortnite frequently introduces updates, live events, and collaborations with franchises like Marvel and Star Wars, keeping the experience fresh and exciting for players.</p>
+        <p>With frequent updates and collaborations, Fortnite keeps the experience fresh. From live events to partnerships with Marvel and Star Wars, there's always something exciting happening.</p>
+        <p>Epic Games' dedication to innovative storytelling ensures players always have new challenges and content.</p>
     </div>
 
-    <div class="content-wrapper">
+    <div class="content-wrapper" id="lore">
         <h2>Fortnite Lore</h2>
-        <p>The evolving storyline in Fortnite connects each season, offering immersive narratives and engaging players with new characters and events in its universe.</p>
+        <p>Fortnite's story evolves with each season, offering players an immersive narrative filled with new characters, events, and mysteries.</p>
+        <p>Major events, such as the Zero Point storyline, have captivated players and tied together the entire Fortnite universe.</p>
     </div>
 
     <footer>
         <p>&copy; 2024 Fortnite Fan Website | All rights reserved.</p>
     </footer>
 
+    <!-- Snowflakes -->
+    <div class="snowflake">❄</div>
+    <img src="https://i.imgur.com/qh8dXkQ.png" class="snowman" alt="Snowman">
+
     <script>
         function toggleDarkMode() {
-            const darkModeButton = document.getElementById('darkModeButton');
             document.body.classList.toggle('dark-mode');
-            darkModeButton.textContent = document.body.classList.contains('dark-mode') ? "Light Mode" : "Dark Mode";
         }
 
-        function goDown() {
-            const footer = document.querySelector('footer');
-            footer.scrollIntoView({ behavior: 'smooth' });
+        function toggleWinterMode() {
+            document.body.classList.toggle('winter-mode');
         }
     </script>
 </body>
