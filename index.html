@@ -15,7 +15,7 @@
             padding: 0;
             color: #ecf0f1;
             transition: background-color 0.3s, color 0.3s;
-            cursor: url('https://i.imgur.com/6I4Kwfn.png'), auto;
+            cursor: url('https://i.imgur.com/XelXthN.png'), auto; /* Custom Cursor */
         }
 
         h1 {
@@ -145,7 +145,43 @@
             position: fixed;
             bottom: 20px;
             right: 20px;
-            width: 150px;
+            width: 100px;
+        }
+
+        /* Scroll Buttons */
+        .scroll-button {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 40px;
+            height: 40px;
+            background: #e74c3c;
+            color: #ecf0f1;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 1.2em;
+            cursor: pointer;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+            transition: transform 0.3s ease;
+        }
+
+        .scroll-button:hover {
+            transform: scale(1.2);
+            background: #c0392b;
+        }
+
+        .scroll-button.down {
+            right: 70px;
+            background: #3498db;
+        }
+
+        /* Hover Effects */
+        .button:hover,
+        .about-me-btn:hover,
+        .scroll-button:hover {
+            cursor: url('https://i.imgur.com/WgT2psD.png'), auto; /* Custom 'COMING SOON' Cursor */
         }
 
         /* About Me Button */
@@ -220,6 +256,10 @@
     <div class="snowflake">❄</div>
     <img src="https://i.imgur.com/fYtRfV1.png" class="snowman" alt="Snowman">
 
+    <!-- Scroll Buttons -->
+    <div class="scroll-button" onclick="scrollToTop()">↑</div>
+    <div class="scroll-button down" onclick="scrollToBottom()">↓</div>
+
     <script>
         function toggleDarkMode() {
             document.body.classList.toggle('dark-mode');
@@ -227,6 +267,14 @@
 
         function toggleWinterMode() {
             document.body.classList.toggle('winter-mode');
+        }
+
+        function scrollToTop() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        function scrollToBottom() {
+            window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
         }
     </script>
 </body>
