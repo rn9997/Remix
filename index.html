@@ -8,7 +8,7 @@
     <style>
         /* General Styles */
         body {
-            background: #2c3e50 url('https://i.imgur.com/XzHTwnW.jpg') no-repeat center center;
+            background: #2c3e50 url('https://i.imgur.com/MFMvDQm.jpg') no-repeat center center;
             background-size: cover;
             font-family: 'Roboto', sans-serif;
             margin: 0;
@@ -27,9 +27,21 @@
             text-shadow: 2px 2px 15px rgba(0, 0, 0, 0.8);
         }
 
+        /* Dark Mode */
+        body.dark-mode {
+            background: #121212 url('https://i.imgur.com/sWo2XyG.jpg') no-repeat center center;
+            background-size: cover;
+            color: #e0e0e0;
+            transition: background-color 0.5s, color 0.5s;
+        }
+
+        body.dark-mode h1 {
+            color: #8e44ad;
+        }
+
         /* Winter Mode */
         body.winter-mode {
-            background: #dff9fb url('https://i.imgur.com/tL1V1Y3.jpg') no-repeat center center;
+            background: #dff9fb url('https://i.imgur.com/zTGuRVZ.jpg') no-repeat center center;
             background-size: cover;
             color: #130f40;
             cursor: url('https://i.imgur.com/VmlJsyy.png'), auto;
@@ -85,6 +97,10 @@
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
         }
 
+        body.dark-mode .content-wrapper {
+            background: rgba(33, 33, 33, 0.9);
+        }
+
         body.winter-mode .content-wrapper {
             background: rgba(116, 185, 255, 0.8);
         }
@@ -94,6 +110,10 @@
             padding: 20px;
             background: #34495e;
             color: #bdc3c7;
+        }
+
+        body.dark-mode footer {
+            background: #222222;
         }
 
         body.winter-mode footer {
@@ -198,7 +218,7 @@
 
     <!-- Snowflakes -->
     <div class="snowflake">❄</div>
-    <img src="https://i.imgur.com/qh8dXkQ.png" class="snowman" alt="Snowman">
+    <img src="https://i.imgur.com/fYtRfV1.png" class="snowman" alt="Snowman">
 
     <script>
         function toggleDarkMode() {
