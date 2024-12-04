@@ -8,7 +8,7 @@
     <style>
         /* General Styles */
         body {
-            background: #2c3e50 url('https://png.pngtree.com/thumb_back/fh260/background/20230611/pngtree-snowy-landscape-wallpaper-with-trees-snow-white-winter-image_2935694.jpg') no-repeat center center;
+            background: url('https://img.lovepik.com/background/20211021/large/lovepik-winter-background-image_401652318.jpg') no-repeat center center fixed;
             background-size: cover;
             font-family: 'Roboto', sans-serif;
             margin: 0;
@@ -41,7 +41,7 @@
 
         /* Winter Mode */
         body.winter-mode {
-            background: #dff9fb url('https://img.lovepik.com/background/20211021/large/lovepik-winter-background-image_401652318.jpg') no-repeat center center;
+            background: url('https://img.lovepik.com/background/20211021/large/lovepik-winter-background-image_401652318.jpg') no-repeat center center fixed;
             background-size: cover;
             color: #130f40;
             cursor: url('https://i.imgur.com/VmlJsyy.png'), auto;
@@ -80,6 +80,9 @@
             cursor: pointer;
             transition: background-color 0.3s, transform 0.3s ease;
             margin: 10px;
+            text-decoration: none;
+            display: inline-block;
+            text-align: center;
         }
 
         .button:hover {
@@ -147,63 +150,6 @@
             right: 20px;
             width: 100px;
         }
-
-        /* Scroll Buttons */
-        .scroll-button {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            width: 40px;
-            height: 40px;
-            background: #e74c3c;
-            color: #ecf0f1;
-            border-radius: 50%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            font-size: 1.2em;
-            cursor: pointer;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
-            transition: transform 0.3s ease;
-        }
-
-        .scroll-button:hover {
-            transform: scale(1.2);
-            background: #c0392b;
-        }
-
-        .scroll-button.down {
-            right: 70px;
-            background: #3498db;
-        }
-
-        /* Hover Effects */
-        .button:hover,
-        .about-me-btn:hover,
-        .scroll-button:hover {
-            cursor: url('https://i.imgur.com/WgT2psD.png'), auto; /* Custom 'COMING SOON' Cursor */
-        }
-
-        /* About Me Button */
-        .about-me-btn {
-            display: block;
-            width: 200px;
-            margin: 10px auto;
-            text-align: center;
-            background: #e74c3c;
-            color: #ecf0f1;
-            padding: 10px;
-            font-size: 1.2em;
-            font-weight: bold;
-            border-radius: 10px;
-            text-decoration: none;
-            transition: background 0.3s ease, transform 0.3s ease;
-        }
-
-        .about-me-btn:hover {
-            background: #c0392b;
-            transform: scale(1.1);
-        }
     </style>
 </head>
 <body>
@@ -220,7 +166,7 @@
         <h2>About Me</h2>
         <p>Hi, I'm Raihan (a.k.a. Reginald). I'm a gamer and the creator of this website. I love Fortnite for its creative gameplay, strategic challenges, and vibrant community.</p>
         <p>This website is a hub for Fortnite fans, sharing gameplay tips, lore insights, and updates.</p>
-        <a href="https://rn9997.github.io/about-myself-project/" target="_blank" class="about-me-btn">More About Me</a>
+        <a href="https://rn9997.github.io/about-myself-project/" target="_blank" class="button">More About Me</a>
     </div>
 
     <!-- Fortnite Information -->
