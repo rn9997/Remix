@@ -6,56 +6,38 @@
     <title>Fortnite Fan Website</title>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
     <style>
-    .bn632-hover {
-  width: 160px;
-  font-size: 16px;
-  font-weight: 600;
-  color: #fff;
-  cursor: pointer;
-  margin: 20px;
-  height: 55px;
-  text-align:center;
-  border: none;
-  background-size: 300% 100%;
-  border-radius: 50px;
-  moz-transition: all .4s ease-in-out;
-  -o-transition: all .4s ease-in-out;
-  -webkit-transition: all .4s ease-in-out;
-  transition: all .4s ease-in-out;
-}
-
-.bn632-hover:hover {
-  background-position: 100% 0;
-  moz-transition: all .4s ease-in-out;
-  -o-transition: all .4s ease-in-out;
-  -webkit-transition: all .4s ease-in-out;
-  transition: all .4s ease-in-out;
-}
-
-.bn632-hover:focus {
-  outline: none;
-}
-
-.bn632-hover.bn28 {
-  background-image: linear-gradient(
-    to right,
-    #eb3941,
-    #f15e64,
-    #e14e53,
-    #e2373f
-  );
-  box-shadow: 0 5px 15px rgba(242, 97, 103, 0.4);
-}
         /* General Styles */
+        :root {
+            --primary-color: #e74c3c;
+            --secondary-color: #2980b9;
+            --background-dark: #121212;
+            --background-light: #ecf0f1;
+            --text-color-light: #ecf0f1;
+            --text-color-dark: #e0e0e0;
+        }
+
         body {
             background: url('https://img.lovepik.com/background/20211021/large/lovepik-winter-background-image_401652318.jpg') no-repeat center center fixed;
             background-size: cover;
             font-family: 'Roboto', sans-serif;
             margin: 0;
             padding: 0;
-            color: #ecf0f1;
+            color: var(--text-color-light);
             transition: background-color 0.3s, color 0.3s;
-            cursor: url('https://i.imgur.com/XelXthN.png'), auto; /* Custom Cursor */
+            cursor: url('https://i.imgur.com/XelXthN.png'), auto;
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+            opacity: 0;
+            animation: fadeInPage 2s forwards;
+        }
+
+        @keyframes fadeInPage {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
         }
 
         h1 {
@@ -63,15 +45,15 @@
             font-size: 3em;
             text-transform: uppercase;
             text-align: center;
-            color: #e74c3c;
+            color: var(--primary-color);
             text-shadow: 2px 2px 15px rgba(0, 0, 0, 0.8);
         }
 
         /* Dark Mode */
         body.dark-mode {
-            background: #121212 url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS9x_UNMEEPTPvj2E_2G23vhebSnkTB5newlA&s') repeat;
-            background-size: 200px 200px; /* Adjust tile size as necessary */
-            color: #e0e0e0;
+            background: var(--background-dark) url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS9x_UNMEEPTPvj2E_2G23vhebSnkTB5newlA&s') repeat;
+            background-size: 200px 200px;
+            color: var(--text-color-dark);
             transition: background-color 0.5s, color 0.5s;
         }
 
@@ -88,19 +70,40 @@
         }
 
         body.winter-mode h1 {
-            color: #2980b9;
+            color: var(--secondary-color);
         }
 
-        body.winter-mode .snowflake, body.winter-mode .snowman {
-            display: block;
+        .snowflake {
+            position: fixed;
+            top: -10px;
+            font-size: 1.5em;
+            color: #fff;
+            animation: fall 10s linear infinite;
+            z-index: 10;
         }
 
-        .snowflake, .snowman {
-            display: none;
+        @keyframes fall {
+            0% {
+                transform: translateY(-100px);
+                left: 0;
+            }
+            100% {
+                transform: translateY(100vh);
+                left: 100%;
+            }
         }
 
-        body.winter-mode .button {
-            background: #2980b9;
+        .snowman {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 100px;
+            animation: bounce 2s infinite alternate;
+        }
+
+        @keyframes bounce {
+            0% { transform: translateY(0); }
+            100% { transform: translateY(-10px); }
         }
 
         /* Buttons Section */
@@ -113,9 +116,9 @@
             font-size: 1em;
             font-weight: 600;
             padding: 10px 20px;
-            color: #ecf0f1;
-            background: #e74c3c;
-            border: 2px solid #ecf0f1;
+            color: var(--text-color-light);
+            background: var(--primary-color);
+            border: 2px solid var(--text-color-light);
             border-radius: 10px;
             cursor: pointer;
             transition: background-color 0.3s, transform 0.3s ease;
@@ -163,32 +166,59 @@
             background: #74b9ff;
         }
 
-        /* Snowflake Animation */
-        .snowflake {
-            position: fixed;
-            top: -10px;
-            font-size: 1.5em;
-            color: #fff;
-            animation: fall 10s linear infinite;
+        /* Snowflakes */
+        .snowflake:nth-child(1) {
+            left: 10%;
+            animation-duration: 12s;
+        }
+        .snowflake:nth-child(2) {
+            left: 20%;
+            animation-duration: 14s;
+        }
+        .snowflake:nth-child(3) {
+            left: 30%;
+            animation-duration: 16s;
         }
 
-        @keyframes fall {
-            0% {
-                transform: translateY(-100px);
-                left: 0;
-            }
-            100% {
-                transform: translateY(100vh);
-                left: 100%;
-            }
+        /* Suggestion Form */
+        #suggestion-form {
+            display: none;
+            margin: 20px;
+            text-align: center;
+            background: rgba(33, 33, 33, 0.8);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+            opacity: 0;
+            animation: fadeIn 0.5s forwards;
         }
 
-        /* Snowman */
-        .snowman {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            width: 100px;
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        #suggestion-form textarea {
+            width: 100%;
+            height: 100px;
+            border-radius: 10px;
+            padding: 10px;
+            border: 2px solid var(--primary-color);
+            background-color: #333;
+            color: var(--text-color-light);
+        }
+
+        #suggestion-form button {
+            background: var(--primary-color);
+            padding: 10px 20px;
+            border-radius: 10px;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        #suggestion-form button:hover {
+            background: #c0392b;
         }
 
         /* Scroll Buttons */
@@ -197,8 +227,8 @@
             width: 40px;
             height: 40px;
             font-size: 20px;
-            color: #ecf0f1;
-            background-color: #e74c3c;
+            color: var(--text-color-light);
+            background-color: var(--primary-color);
             border: none;
             border-radius: 50%;
             display: flex;
@@ -223,6 +253,20 @@
             bottom: 40px;
             right: 20px;
         }
+
+        /* Popup */
+        .popup {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: rgba(0, 0, 0, 0.8);
+            color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+            display: none;
+        }
     </style>
 </head>
 <body>
@@ -230,8 +274,22 @@
 
     <!-- Centered Buttons -->
     <div id="buttons-section">
-        <button id="darkModeButton" class="button" onclick="toggleDarkMode()">Dark Mode</button>
-        <button id="winterModeButton" class="button" onclick="toggleWinterMode()">Winter Mode</button>
+        <button id="darkModeButton" class="button" onclick="toggleDarkMode()" aria-label="Toggle Dark Mode">Dark Mode</button>
+        <button id="winterModeButton" class="button" onclick="toggleWinterMode()" aria-label="Toggle Winter Mode">Winter Mode</button>
+        <button class="button" onclick="toggleSuggestionForm()" aria-label="Give Suggestion">Give a Suggestion</button>
+    </div>
+
+    <!-- Suggestion Form -->
+    <div id="suggestion-form">
+        <h2>Your Suggestion</h2>
+        <textarea id="suggestion-text" placeholder="Write your suggestion here..." aria-label="Your suggestion"></textarea><br><br>
+        <button onclick="submitSuggestion()">Submit Suggestion</button>
+    </div>
+
+    <!-- Popup Alert -->
+    <div id="popup" class="popup">
+        <p>Thank you for your suggestion!</p>
+        <button onclick="closePopup()">Close</button>
     </div>
 
     <!-- About Section -->
@@ -264,17 +322,7 @@
     <div class="content-wrapper" id="lore">
         <h2>Fortnite Lore</h2>
         <p>Fortnite's story evolves with each season, offering players an immersive narrative filled with new characters, events, and mysteries.</p>
-        <p>Major events, such as the Zero Point storyline, have captivated players and tied together the entire Fortnite universe.</p> </div>
-<div class="content-wrapper" id="Learn More About Fortnite">
-<h2> Learn More About Fortnite </h2>
-<p> What I have told you about fortnite is not everything fortnite offers. Fortnite offers way more such as creative, zero build modes and OG gamemodes! This button below me will direct you to a website where you can learn much more about fortnite!. <p>
-<a href="https://www.fortnite.com/news"><button class="bn632-hover bn28">Learn More About Fortnite</button></a>
-
-</p>
-
-</p>
-</h2>
-        
+        <p>Major events, such as the Zero Point storyline, have captivated players and tied together the entire Fortnite universe.</p>
     </div>
 
     <footer>
@@ -283,7 +331,9 @@
 
     <!-- Snowflakes -->
     <div class="snowflake">❄</div>
-    <img src="https://i.imgur.com/fYtRfV1.png" class="snowman" alt="Snowman">
+    <div class="snowflake">❄</div>
+    <div class="snowflake">❄</div>
+    <img src="https://i.imgur.com/fYtRfV1.png" class="snowman" alt="Snowman" loading="lazy">
 
     <!-- Scroll Buttons -->
     <button class="scroll-button up" onclick="scrollToTop()">↑</button>
@@ -304,6 +354,33 @@
 
         function scrollToBottom() {
             window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
+        }
+
+        function toggleSuggestionForm() {
+            const form = document.getElementById('suggestion-form');
+            form.style.display = form.style.display === 'block' ? 'none' : 'block';
+        }
+
+        function submitSuggestion() {
+            const suggestionText = document.getElementById('suggestion-text').value;
+            if (suggestionText.trim() !== "") {
+                alert("Thank you for your suggestion!");
+                document.getElementById('suggestion-text').value = "";
+                toggleSuggestionForm();
+                showPopup();
+            } else {
+                alert("Please write a suggestion before submitting.");
+            }
+        }
+
+        function showPopup() {
+            const popup = document.getElementById('popup');
+            popup.style.display = 'block';
+        }
+
+        function closePopup() {
+            const popup = document.getElementById('popup');
+            popup.style.display = 'none';
         }
     </script>
 </body>
